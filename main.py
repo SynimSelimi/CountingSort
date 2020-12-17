@@ -1,5 +1,5 @@
 import random
-import time
+import datetime
 
 # Generate random integer array
 def gen_array(n):
@@ -9,9 +9,9 @@ def gen_array(n):
 
 # Method that measures speed of the callback execution 
 def measure_time(callback, *args):
-  start = time.time()
+  start = datetime.datetime.now()
   result = callback(*args)
-  end = time.time()
+  end = datetime.datetime.now()
   print("Elapsed time: " + str(end - start))
   return result
 
