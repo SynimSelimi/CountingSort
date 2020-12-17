@@ -15,7 +15,11 @@ The measurement results using random array samples can be found below.
 | 1000000 | N/A     | 2s      | N/A    | 186ms  |
 
 **n** - Array Length
+
 **ccs-py** - Comparison Count Sort in Python
+
 **dcs-py** - Distribution Count Sort in Python
+
 **ccs-sc** - Comparison Count Sort in Scala
+
 **dcs-sc** - Comparison Count Sort in Scala
