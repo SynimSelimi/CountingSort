@@ -1,4 +1,5 @@
 import random
+import time
 
 # Generate random integer array
 def gen_array(n):
@@ -6,11 +7,19 @@ def gen_array(n):
   random.shuffle(arr)
   return arr
 
+# Method that measures speed of the callback execution 
+def measure_time(callback, *args):
+  start = time.time()
+  result = callback(*args)
+  end = time.time()
+  print("Elapsed time: " + str(end - start))
+  return result
+
 # Main demo
 def main():
   # Set test scale
   scale = 10000
-  arr = gen_array(scale)
+  arr = measure_time(gen_array, scale)
   print(arr[0])
 
 # Run main demo
