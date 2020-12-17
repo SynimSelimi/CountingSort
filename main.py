@@ -25,6 +25,27 @@ def comparison_count_sort(arr):
 
   return sorted_array
 
+# Apply Distribution Count Sort on arr from minm to maxm
+def distribution_count_sort(arr, minm, maxm):
+  size = len(arr)
+  maxmin = maxm - minm + 1
+  sorted_array = [0] * size
+  freq = [0] * maxmin
+
+  for i in range(0, size):
+    freq[arr[i] - minm] += 1
+  for j in range(1, maxmin):
+    freq[j] += freq[j-1]
+
+  i = size - 1
+  while i > 0:
+      cindex = freq[arr[i] - minm]
+      sorted_array[cindex - 1] = arr[i]
+      freq[i] -= 1
+      i -= 1
+
+  return sorted_array
+
 # Method that measures speed of the callback execution 
 def measure_time(callback, *args):
   start = datetime.datetime.now()
@@ -42,6 +63,11 @@ def main():
   # Test comparison_count_sort speed
   print(arr[0])
   sarr = measure_time(comparison_count_sort, arr)
+  print(sarr[0])
+  
+  # Test distribution_count_sort speed
+  print(arr[0])
+  sarr = measure_time(distribution_count_sort, arr, min(arr), max(arr))
   print(sarr[0])
 
 # Run main demo
