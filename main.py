@@ -20,7 +20,7 @@ def comparison_count_sort(arr):
       else:
         count[i] += 1
 
-  for i in range(0, size - 1):
+  for i in range(0, size):
     sorted_array[count[i]] = arr[i]
 
   return sorted_array
@@ -38,10 +38,10 @@ def distribution_count_sort(arr, minm, maxm):
     freq[j] += freq[j-1]
 
   i = size - 1
-  while i > 0:
+  while i >= 0:
       cindex = freq[arr[i] - minm]
       sorted_array[cindex - 1] = arr[i]
-      freq[i] -= 1
+      freq[arr[i] - minm] -= 1
       i -= 1
 
   return sorted_array

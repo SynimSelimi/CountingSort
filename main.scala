@@ -56,7 +56,7 @@ def distributionCountSort(a: Array[Int], min: Int, max: Int): Array[Int] = {
 
 // Apply Distribution Count Sort with defualt min max
 def distributionCountSort(a: Array[Int]): Array[Int] = {
-  distributionCountSort(a, 0, a.length)
+  distributionCountSort(a, a.min, a.max)
 }
 
 // Measure speed of executing block R 
