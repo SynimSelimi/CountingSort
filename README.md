@@ -22,4 +22,4 @@ The measurement results using random array samples can be found below.
 
 **ccs-sc** - Comparison Count Sort in Scala
 
-**dcs-sc** - Comparison Count Sort in Scala
+**dcs-sc** - Distribution Count Sort in Scala
